@@ -1,0 +1,17 @@
+[project]
+name = "apizit-django-heavy-api"
+version = "1.0.0"
+requires-python = ">=3.12,<3.13"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-m 'not model'"
+markers = ["model: opt-in real public model downloads and inference"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
